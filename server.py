@@ -15,7 +15,7 @@ MIN_SCORE = 3        # Minimal skor setup 3 baru kirim WA
 # === API KEY LU ===
 TWELVE_API = "0aa470b9363a4dcdb91b79fe20c67453"
 WAHA_URL = "https://gate.whapi.cloud"
-WAHA_TOKEN = "R4bWD3lxpKwND6kJrsVSPDZ0w1H5jT7l"
+WAHA_TOKEN = "YJ4AGz6BPv9M3sNxT5yihpwgXLznlQQU"
 WAHA_TO = "6281333903800@s.whatsapp.net"
 
 def send_wa(msg):
