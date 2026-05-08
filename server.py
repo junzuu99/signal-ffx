@@ -107,3 +107,7 @@ if __name__ == "__main__":
     import uvicorn
     send_wa("✅ Bot Signal Crypto BTC/ETH/SOL Online bro. Siap cari setup A+")
     uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
+@app.get("/test")
+def test_wa():
+    send_wa("🔥 TEST BOT JALAN BRO. Kalo ini masuk = WAHA tembus 🔥")
+    return {"status": "sent"}
