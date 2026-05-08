@@ -22,8 +22,15 @@ def send_wa(msg):
     url = f"{WAHA_URL}/messages/text"
     headers = {"Authorization": f"Bearer {WAHA_TOKEN}", "Content-Type": "application/json"}
     data = {"to": WAHA_TO, "body": msg}
-    try: requests.post(url, headers=headers, json=data, timeout=10)
-    except: pass
+    try:
+        print(f"DEBUG: Kirim ke {WAHA_TO}")
+        r = requests.post(url, headers=headers, json=data, timeout=10)
+        print(f"POST whapi status: {r.status_code}")
+        print(f"POST whapi response: {r.text}")
+        return r.status_code == 200
+    except Exception as e:
+        print(f"ERROR send_wa: {e}")
+        return False
 
 def get_price(symbol):
     try:
