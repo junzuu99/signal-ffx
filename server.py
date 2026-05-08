@@ -100,14 +100,15 @@ def scan_all():
 @app.get("/")
 def home(): return {"status": "Bot Signal Crypto Binance Online 24 Jam", "pairs": PAIRS}
 
-@app.get("/scan") 
+@app.get("/scan")
 def scan(): return scan_all()
+
+@app.get("/test")      # <-- POKNYA DI ATAS if __name__
+def test_wa():
+    send_wa("🔥 TEST BOT JALAN BRO. Kalo ini masuk = WAHA tembus 🔥")
+    return {"status": "sent"}
 
 if __name__ == "__main__":
     import uvicorn
     send_wa("✅ Bot Signal Crypto BTC/ETH/SOL Online bro. Siap cari setup A+")
     uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
-@app.get("/test")
-def test_wa():
-    send_wa("🔥 TEST BOT JALAN BRO. Kalo ini masuk = WAHA tembus 🔥")
-    return {"status": "sent"}
